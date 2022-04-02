@@ -1,0 +1,37 @@
+```java
+/*
+Brute : If the elements are +ve int only then for each mat[i][j]==0 make the entire column that is non 0 to a negative int say -1.
+Then traverse the mat and set all -1 to 0
+
+Better : Take 2 arrays onr row[] and other col[] and if mat[i][j]==0 then set row[i]=0 and col[j]=0 and at last for mat[i][j] if row[i]==0 or col[j]==0 
+then set mat[i][j] to 0
+
+Best : Take 1st row of mat as col[] and 1st col of mat as row[].
+*/
+
+class Solution {
+    public void setZeroes(int[][] mat) {
+        int col0=1,rows=mat.length,cols=mat[0].length;
+        
+        //if mat[i][j]==0 then set mat[i][0]=0 and mat[0][j]=0
+        for(int i=0;i<rows;i++){
+            if(mat[i][0]==0)    col0=0; //this will mark if 1st col has a 0 val 
+            for(int j=1;j<cols;j++){
+                if(mat[i][j]==0){
+                    mat[i][0]=mat[0][j]=0;
+                }
+            }
+        }
+        
+        //checking from last row and last col if mat[i][0]==0 or mat[0][j]==0
+        for(int i=rows-1;i>=0;i--){
+            for(int j=cols-1;j>=1;j--){
+                if(mat[i][0]==0 || mat[0][j]==0){
+                    mat[i][j]=0;
+                }
+            }
+            if(col0==0) mat[i][0]=0;    //only if 1st col contains 0 then set it 0
+        }
+    }
+}
+```
