@@ -5,9 +5,9 @@
 Brute: Hashing of elements in an array
 Better: Let x=missing no and y=repeated no S=(n*(n+1)/2) and S=(n*(n+1)*(2n+1)/6)
         so x-y=S and x^2-y^2=S^2 using these 2 find x and y
-Best: use xor so (xor of array) xor (xor from 1 to n) will give x^y where x is missing no and 
-      y is repeated no. Seperate the nums of A in 2 baskets based on the set bit os x^y and 
-      do the same for (1 to n) then xor the buckets and that will be answer   
+Best: use xor so (xor of array) xor (xor from 1 to n) will give x^y where x is missing no and  y is repeated no. 
+      Seperate the nums of A in 2 baskets based on the right most set bit in x^y and do the same for numbers from (1 to n) in same baskets 
+      then xor the buckets and that will be answer   
 */
 public class Solution {
     // DO NOT MODIFY THE LIST. IT IS READ ONLY
