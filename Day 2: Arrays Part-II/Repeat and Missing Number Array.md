@@ -29,19 +29,15 @@ public class Solution {
         for (i = 1; i < n; i++)
             xor1 = xor1 ^ A.get(i);
  
-        /* XOR the previous result with numbers from
-       1 to n*/
+        /* XOR the previous result with numbers from 1 to n*/
         for (i = 1; i <= n; i++)
             xor1 = xor1 ^ i;
  
         /* Get the rightmost set bit in set_bit_no */
         set_bit_no = xor1 & ~(xor1 - 1);
  
-        /* Now divide elements into two sets by comparing
-        rightmost set bit of xor1 with the bit at the same
-        position in each element. Also, get XORs of two
-        sets. The two XORs are the output elements. The
-        following two for loops serve the purpose */
+        /* Now divide elements into two sets by comparing rightmost set bit of xor1 with the bit at the same position in each element. Also, get XORs of two sets. 
+        The two XORs are the output elements. The following two for loops serve the purpose */
         for (i = 0; i < n; i++) {
             if ((A.get(i) & set_bit_no) != 0)
                 /* arr[i] belongs to first set */
