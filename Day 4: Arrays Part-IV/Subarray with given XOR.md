@@ -1,7 +1,9 @@
 ```java
 /*
 Brute: Generate all subarrays and find xor of elements of each subarray 
-
+Best: x ^ k = xor 
+      => x = xor ^ k
+      Sor at every idx we check if there exists a subarray with xor value x(xor ^ k) if so we count it 
 */
 public class Solution {
     public int solve(ArrayList<Integer> A, int B) {
