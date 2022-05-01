@@ -9,7 +9,8 @@
 import java.util.*;
 
 public class Solution {
-    private static void depthFirstSearchHelper(ArrayList<ArrayList<Integer>> graph, int currVertex, ArrayList<Integer> singleComponent, boolean[] visited) {
+    private static void depthFirstSearchHelper(ArrayList<ArrayList<Integer>> graph, int currVertex, 
+    						ArrayList<Integer> singleComponent, boolean[] visited) {
         visited[currVertex] = true;
         singleComponent.add(currVertex);
         
@@ -22,7 +23,7 @@ public class Solution {
     }
 
     public static ArrayList<ArrayList<Integer>> depthFirstSearch(int v, int e, 
-													ArrayList<ArrayList<Integer>> edges) {
+								ArrayList<ArrayList<Integer>> edges) {
         ArrayList<ArrayList<Integer>> adjList = new ArrayList<>(v);
         for (int i = 0; i < v; i++) {
             adjList.add(new ArrayList<>());
